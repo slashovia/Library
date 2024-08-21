@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashmi's Library</title>
+</head>
+
+<body>
+
+    <main>
+        <h1>Hashmi's Library</h1>
+        <button onclick="showDialog()" id="openBtn">Add a New Book</button>
+        <dialog id="dialog">
+            <h2>Add your favorite book's info!</h2>
+            <form method="dialog">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+                <label for="author">Author:</label>
+                <input type="text" name="author" id="author" required>
+                <label for="year">Publication Year:</label>
+                <input type="number" name="year" id="year" min="0" max="2024" required>
+                <label for="genre">Literary Genre:</label>
+                <select id="genre" required>
+                    <option value="">--Please, choose an option--</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="crime">Crime</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="horror">Horror</option>
+                    <option value="romance">Romance</option>
+                </select>
+                <div class="buttons">
+                    <button id="closeBtn" formnovalidate>Close</button>
+                    <button id="confirmBtn">Confirm</button>
+                </div>
+            </form>
+        </dialog>
+        <div class="container-books"></div>
+    </main>
+    <script>
+        dialog = document.querySelector('dialog');
+        function showDialog() {
+            dialog.showModal();
+        }
+    </script>
+</body>
+
+</html>
