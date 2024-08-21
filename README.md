@@ -1,5 +1,5 @@
 # The Odin Project's Project: Library
-Create a web page where to store, remove and add all user's books.
+Create a web page where to store, remove and add all user's books. [Link](https://www.theodinproject.com/lessons/node-path-javascript-library)
 ## Instructions
 1. Write a function that takes user's input and store the book into an array;
 2. Write a function that loops through the array and displays each book on the page in a table/card;
