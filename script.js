@@ -1,4 +1,5 @@
 const dialog = document.querySelector('dialog');
+const formInput = document.querySelectorAll('.formInput');
 const openBtn = document.querySelector('#openBtn');
 const closeBtn = document.querySelector('#closeBtn');
 const confirmBtn = document.querySelector('#confirmBtn');
@@ -13,6 +14,14 @@ const myLibrary = [];
 
 function showDialog() {
     dialog.showModal();
+}
+
+function resetDialog() {
+    formInput.forEach(input => {
+        input.value = '';
+
+    });
+    dialog.close();
 }
 
 function Book(name, author, year, pages, genre, status) {
@@ -74,10 +83,10 @@ function createElementCard(book) {
     })
 }
 
-
 confirmBtn.addEventListener('click', () => {
     const newBook = new Book(name.value, author.value, year.value, pages.value, genre.value, status.value);
     addBookToLibrary(newBook);
     createElementCard(newBook);
+    resetDialog();
 })
 
