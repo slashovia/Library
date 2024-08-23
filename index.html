@@ -13,17 +13,17 @@
         <h1>Hashmi's Library</h1>
         <button onclick="showDialog()" id="openBtn">Add a New Book</button>
         <dialog>
-            <form method="dialog">
+            <form method="dialog" autocomplete="off">
                 <h2>Add your favorite book's info!</h2>
                 <p>All fields must be filled.</p>
                 <label for="name">Name:</label>
-                <input type="text" name="name" id="name" required>
+                <input class='formInput' type="text" name="name" id="name" required>
                 <label for="author">Author:</label>
-                <input type="text" name="author" id="author" required>
+                <input class='formInput' type="text" name="author" id="author" required>
                 <label for="year">Publication Year:</label>
-                <input type="number" name="year" id="year" min="0" max="2024" required>
+                <input class='formInput' type="number" name="year" id="year" min="0" max="2024" required>
                 <label for="pages">Pages:</label>
-                <input type="number" name="pages" id="pages" min="0" required>
+                <input class='formInput' type="number" name="pages" id="pages" min="0" required>
                 <label for="genre">Literary Genre:</label>
                 <select id="genre" required>
                     <option>Adventure</option>
