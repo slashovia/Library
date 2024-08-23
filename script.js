@@ -22,14 +22,11 @@ function Book(name, author, year, pages, genre, status) {
     this.pages = pages;
     this.genre = genre;
     this.status = status;
+
 }
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
-}
-
-function createBookList(book) {
-
 }
 
 function createElementCard(book) {
@@ -49,17 +46,34 @@ function createElementCard(book) {
         ul.appendChild(li);
     }
 
-    //Buttons
+    //Change status Button
     const statusBtn = document.createElement('button');
     statusBtn.classList.add('status-btn');
     statusBtn.textContent = 'Change Status';
     card.appendChild(statusBtn);
     statusBtn.addEventListener('click', () => {
-    }
-    )
+        const statusLi = card.querySelector('ul > li:last-child');
+        if (statusLi.textContent == 'Status: Read') {
+            statusLi.textContent = 'Status: Not read yet';
+            book.status = 'Not read yet';
+        }
+        else {
+            statusLi.textContent = 'Status: Read';
+            book.status = 'Read';
+        }
+    })
 
-
+    //Remove book Button
+    const removeBtn = document.createElement('button')
+    removeBtn.classList.add('remove-btn');
+    removeBtn.textContent = 'Remove Book';
+    card.appendChild(removeBtn);
+    removeBtn.addEventListener('click', () => {
+        myLibrary.splice(myLibrary.indexOf(book), 1);
+        card.remove();
+    })
 }
+
 
 confirmBtn.addEventListener('click', () => {
     const newBook = new Book(name.value, author.value, year.value, pages.value, genre.value, status.value);
