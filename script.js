@@ -19,7 +19,6 @@ function showDialog() {
 function resetDialog() {
     formInput.forEach(input => {
         input.value = '';
-
     });
     dialog.close();
 }
