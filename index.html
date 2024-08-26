@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hashmi's Library</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <main>
+    <header>
         <h1>Hashmi's Library</h1>
-        <button onclick="showDialog()" id="openBtn">Add a New Book</button>
+    </header>
+    <main>
         <dialog>
-            <form method="dialog" autocomplete="off">
+            <form method="dialog">
                 <h2>Add your favorite book's info!</h2>
                 <p>All fields must be filled.</p>
                 <label for="name">Name:</label>
@@ -45,7 +46,10 @@
                 </div>
             </form>
         </dialog>
-        <div class="container-books"></div>
+        <div class="main">
+            <button onclick="showDialog()" id="openBtn">+ Add Book</button>
+            <div class="container-books"></div>
+        </div>
     </main>
     <script src="/script.js"></script>
 </body>
