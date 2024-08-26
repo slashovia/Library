@@ -1,0 +1,72 @@
+@import url(/reset.css);
+
+@layer utilities {
+    h1 {
+        text-align: center;
+    }
+
+    button {
+        padding: 0.25em 0.5em;
+        border-radius: 0.25em;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        width: fit-content;
+    }
+
+    button:hover {
+        background-color: white;
+        color: chocolate;
+        transition: all 0.3s ease;
+    }
+}
+
+header {
+    padding: 1em;
+    box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
+}
+
+body {
+    background-color: ghostwhite
+}
+
+
+main {
+    & .main {
+        padding: 0 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    & .container-books {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 400px);
+
+        & .card {
+            border-radius: 0.5em;
+            padding: 1em;
+            width: fit-content;
+            box-shadow:
+                0 14px 28px rgba(0, 0, 0, 0.25);
+
+            & button {
+                margin: 0.5em 0.25em 0;
+            }
+
+            & li {
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}
+
+#openBtn {
+    margin-top: 2em;
+    font-size: 1.5em;
+    align-self: center;
+}
+
+dialog {
+    margin: 8px auto;
+}
