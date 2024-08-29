@@ -13,44 +13,45 @@
         <h1>Hashmi's Library</h1>
     </header>
     <main>
-        <dialog>
-            <form method="dialog">
-                <h2>Add your favorite book's info!</h2>
-                <p>All fields must be filled.</p>
-                <label for="name">Name:</label>
-                <input class='formInput' type="text" name="name" id="name" required>
-                <label for="author">Author:</label>
-                <input class='formInput' type="text" name="author" id="author" required>
-                <label for="year">Publication Year:</label>
-                <input class='formInput' type="number" name="year" id="year" min="0" max="2024" required>
-                <label for="pages">Pages:</label>
-                <input class='formInput' type="number" name="pages" id="pages" min="0" required>
-                <label for="genre">Literary Genre:</label>
-                <select id="genre" required>
-                    <option>Adventure</option>
-                    <option>Crime</option>
-                    <option>Comedy</option>
-                    <option>Fantasy</option>
-                    <option>Horror</option>
-                    <option>Romance</option>
-                    <option>Other</option>
-                </select>
-                <label for="status">Status:</label>
-                <select name="status" id="status" required>
-                    <option>Read</option>
-                    <option>Not read yet</option>
-                </select>
-                <div class="buttons">
-                    <button id="closeBtn" formnovalidate>Close</button>
-                    <button id="confirmBtn">Confirm</button>
-                </div>
-            </form>
-        </dialog>
         <div class="main">
-            <button onclick="showDialog()" id="openBtn">+ Add Book</button>
+            <input type="button" id="openBtn" value="+ Add Book">
             <div class="container-books"></div>
         </div>
     </main>
+    <dialog>
+        <form method="dialog">
+            <h2>Add your favorite book's info!</h2>
+            <p>All fields must be filled.</p>
+            <label for="name">Name:</label>
+            <input class='formInput' type="text" name="name" id="name" required>
+            <label for="author">Author:</label>
+            <input class='formInput' type="text" name="author" id="author" required>
+            <label for="year">Publication Year:</label>
+            <input class='formInput' type="number" name="year" id="year" min="0" max="2024" required>
+            <label for="pages">Pages:</label>
+            <input class='formInput' type="number" name="pages" id="pages" min="0" required>
+            <label for="genre">Literary Genre:</label>
+            <select id="genre" name="'genre" required>
+                <option>Adventure</option>
+                <option>Crime</option>
+                <option>Comedy</option>
+                <option>Fantasy</option>
+                <option>Horror</option>
+                <option>Romance</option>
+                <option>Other</option>
+            </select>
+            <label for="status">Status:</label>
+            <select name="status" id="status" required>
+                <option>Read</option>
+                <option>Not read yet</option>
+            </select>
+            <div class="buttons">
+                <input type="reset" value="Reset">
+                <input type="button" id="closeBtn" value="Close">
+                <input type="submit" id="confirmBtn" value="Confirm">
+            </div>
+        </form>
+    </dialog>
     <script src="/script.js"></script>
 </body>
 
