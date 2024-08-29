@@ -5,20 +5,35 @@
         text-align: center;
     }
 
-    button {
+    .main>input {
+        width: fit-content;
+        margin: 1em auto;
+    }
+
+    input {
         padding: 0.25em 0.5em;
         border-radius: 0.25em;
         cursor: pointer;
         font-size: 1rem;
         font-weight: bold;
-        width: fit-content;
     }
 
-    button:hover {
+    input:hover {
         background-color: white;
-        color: chocolate;
+        color: var(--secondary-color);
         transition: all 0.3s ease;
     }
+
+    input:focus,
+    select:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--secondary-color);
+        transition: all 0.3s ease;
+    }
+}
+
+:root {
+    --secondary-color: #DB5C1A;
 }
 
 header {
@@ -27,7 +42,7 @@ header {
 }
 
 body {
-    background-color: ghostwhite
+    background-color: #f8f8ff
 }
 
 
@@ -50,10 +65,6 @@ main {
             box-shadow:
                 0 14px 28px rgba(0, 0, 0, 0.25);
 
-            & button {
-                margin: 0.5em 0.25em 0;
-            }
-
             & li {
                 margin-bottom: 0.5em;
             }
@@ -61,12 +72,23 @@ main {
     }
 }
 
-#openBtn {
-    margin-top: 2em;
-    font-size: 1.5em;
-    align-self: center;
+dialog {
+    margin: auto;
+    padding: 1.5em;
 }
 
-dialog {
-    margin: 8px auto;
+dialog::backdrop {
+    backdrop-filter: blur(3px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    & .buttons {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
 }
