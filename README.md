@@ -8,5 +8,9 @@ Create a web page where to store, remove and add all user's books. [Project's Li
 5. Add a 'Remove' button in every book's card that removes the card itself;
 6. Add a 'Read/Not read' button in every book's card that changes the book's reading status from 'Read' to 'Not Read Yet' and viceversa.
 
+##What I've learnt
+1. Input tag is preferred to basic button tag;
+2. Pseudo-element ::backdrop can handle background when a dialog is open. Very useful to add a blur and no pointer in the background;
+3. When form is inside a dialog, required inputs are submit even if they are empty. So it needs to handle the submit event with JS.
 
 
