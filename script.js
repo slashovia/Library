@@ -1,4 +1,3 @@
-const dialog = document.querySelector('dialog');
 const form = document.querySelector('form');
 const formInput = document.querySelectorAll('.formInput');
 const openBtn = document.querySelector('#openBtn');
@@ -12,23 +11,34 @@ let genre = document.querySelector('#genre');
 let status = document.querySelector('#status');
 const myLibrary = [];
 
+//Creation of anonymous class and assignation to variable "dialog"
+const dialog = new (class {
+    constructor() {
+        this.dialog = document.querySelector('dialog');
+    }
+    open() {
+        this.dialog.showModal();
+    }
 
-function showDialog() {
-    dialog.showModal();
+    reset(form) {
+        form.forEach(input => {
+            input.value = '';
+        });
+    }
 
-}
+    close(form) {
+        this.dialog.close();
+        this.reset(form);
+    }
 
-function resetDialog() {
-    formInput.forEach(input => {
-        input.value = '';
-    });
-}
+    //FIX THIS!!!!
+    dialog.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        this.dialog.close(form);
+    }
+});
 
-function closeDialog() {
-    dialog.close();
-    resetDialog();
-
-}
+}) ();
 
 class Book {
     constructor(name, author, year, pages, genre, status) {
@@ -93,15 +103,15 @@ function createElementCard(book) {
     })
 }
 
-openBtn.addEventListener('click', showDialog);
+openBtn.addEventListener('click', dialog.open);
 
-closeBtn.addEventListener('click', closeDialog);
+closeBtn.addEventListener('click', dialog.close(formInput));
 
 form.addEventListener('submit', () => {
     const newBook = new Book(name.value, author.value, year.value, pages.value, genre.value, status.value);
     addBookToLibrary(newBook);
     createElementCard(newBook);
-    closeDialog();
+    dialog.close(formInput);
 })
 
 dialog.addEventListener('keydown', (e) => {
