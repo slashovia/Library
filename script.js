@@ -30,14 +30,15 @@ function closeDialog() {
 
 }
 
-function Book(name, author, year, pages, genre, status) {
-    this.name = name;
-    this.author = author;
-    this.year = year;
-    this.pages = pages;
-    this.genre = genre;
-    this.status = status;
-
+class Book {
+    constructor(name, author, year, pages, genre, status) {
+        this.name = name;
+        this.author = author;
+        this.year = year;
+        this.pages = pages;
+        this.genre = genre;
+        this.status = status;
+    }
 }
 
 function addBookToLibrary(book) {
