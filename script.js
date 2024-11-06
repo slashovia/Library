@@ -15,6 +15,11 @@ const myLibrary = [];
 const dialog = new (class {
     constructor() {
         this.dialog = document.querySelector('dialog');
+        this.dialog.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                this.dialog.close(formInput);
+            }
+        })
     }
     open() {
         this.dialog.showModal();
@@ -31,14 +36,7 @@ const dialog = new (class {
         this.reset(form);
     }
 
-    //FIX THIS!!!!
-    dialog.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        this.dialog.close(form);
-    }
-});
-
-}) ();
+})();
 
 class Book {
     constructor(name, author, year, pages, genre, status) {
@@ -79,6 +77,7 @@ function createElementCard(book) {
     statusBtn.value = 'Change Status';
     statusBtn.style.marginRight = '0.5em';
     card.appendChild(statusBtn);
+
     statusBtn.addEventListener('click', () => {
         const statusLi = card.querySelector('ul > li:last-child');
         if (statusLi.textContent == 'Status: Read') {
@@ -103,9 +102,9 @@ function createElementCard(book) {
     })
 }
 
-openBtn.addEventListener('click', dialog.open);
+openBtn.addEventListener('click', () => dialog.open());
 
-closeBtn.addEventListener('click', dialog.close(formInput));
+closeBtn.addEventListener('click', () => dialog.close(formInput));
 
 form.addEventListener('submit', () => {
     const newBook = new Book(name.value, author.value, year.value, pages.value, genre.value, status.value);
@@ -113,10 +112,3 @@ form.addEventListener('submit', () => {
     createElementCard(newBook);
     dialog.close(formInput);
 })
-
-dialog.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeDialog();
-    }
-})
-
